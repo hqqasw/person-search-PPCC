@@ -56,7 +56,7 @@ def run_ccpp(ct_affmat, tt_affmat, gpu_id):
 
 
 def run_in_movie(data_dir, subset, algorithm, temporal_link, gpu_id):
-    affinity_dir = osp.join(data_dir, 'cache')
+    affinity_dir = osp.join(data_dir, 'affinity', subset, 'in')
     list_file = osp.join(data_dir, 'meta', subset+'.json')
     mid_list, meta_info = read_meta(list_file)
 
@@ -118,7 +118,7 @@ def run_in_movie(data_dir, subset, algorithm, temporal_link, gpu_id):
 
 
 def run_across_movie(data_dir, subset, algorithm, temporal_link, gpu_id):
-    affinity_dir = osp.join(data_dir, 'affinity')
+    affinity_dir = osp.join(data_dir, 'affinity', subset, 'across')
     list_file = osp.join(data_dir, 'meta', 'cross_{}.json'.format(subset))
     pids, gt_list, gt_dict = read_cross_movie_meta(list_file)
 
@@ -127,8 +127,8 @@ def run_across_movie(data_dir, subset, algorithm, temporal_link, gpu_id):
         link_type = 'max'
     else:
         link_type = 'mean'
-    ct_affmat = read_affmat_cross_movies(affinity_dir, subset, region='face', data_type='ct', link_type=link_type)
-    tt_affmat = read_affmat_cross_movies(affinity_dir, subset, region='body', data_type='tt', link_type=link_type)
+    ct_affmat = read_affmat_cross_movies(affinity_dir, region='face', data_type='ct', link_type=link_type)
+    tt_affmat = read_affmat_cross_movies(affinity_dir, region='body', data_type='tt', link_type=link_type)
 
     # run algorithm
     if algorithm == 'ppcc':
@@ -147,7 +147,6 @@ def run_across_movie(data_dir, subset, algorithm, temporal_link, gpu_id):
     print(
         'mAP: {:.4f}\ttop1: {:.4f}\ttop3: {:.4f}\ttop5: {:.4f}'.format(
             mAP, topk[0], topk[2], topk[4]))
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

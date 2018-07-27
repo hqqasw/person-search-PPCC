@@ -83,12 +83,12 @@ def read_feat_of_one_movie(feat_dir, mid, region, data_type):
     return feat_mat
 
 
-def read_feat_cross_movies(feat_dir, subset, region, data_type):
+def read_feat_cross_movies(feat_dir, region, data_type):
     """
     region: face or body
     data_type: cast or tracklet
     """
-    cache_file = osp.join(feat_dir, subset, '{}_{}_feat.npy'.format(data_type, region))
+    cache_file = osp.join(feat_dir, '{}_{}_feat.npy'.format(data_type, region))
     if osp.isfile(cache_file):
         feat_mat = np.load(cache_file)
     else:
@@ -111,13 +111,13 @@ def read_affmat_of_one_movie(affinity_dir, mid, region, data_type, link_type='me
     return affmat
 
 
-def read_affmat_cross_movies(affinity_dir, subset, region, data_type, link_type='mean'):
+def read_affmat_cross_movies(affinity_dir, region, data_type, link_type='mean'):
     """
     region: face or body
     data_type: cast-tracklet or tracklet-tracklet
     link_type: max or mean
     """
-    cache_file = osp.join(affinity_dir, subset, '{}_{}_{}_affmat.npy'.format(region, link_type, data_type))
+    cache_file = osp.join(affinity_dir, '{}_{}_{}_affmat.npy'.format(region, link_type, data_type))
     if osp.isfile(cache_file):
         affmat = np.load(cache_file)
     else:
