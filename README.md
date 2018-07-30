@@ -5,12 +5,12 @@ This is the implement of our [ECCV 2018](https://eccv2018.org/) paper
 Qingqiu Huang, Wentao Liu, Dahua Lin.  ECCV 2018, Munich.
 
 This project is based on our person search dataset -- ***Cast Search in Movies (CSM)*** .
-More details about this dataset can be found in our [project page]().
+More details about this dataset can be found in our [project page](http://qqhuang.cn/projects/eccv18-person-search/).
 
 ## Basic Usage
 
 1. Download the affinity matrices and meta data of CSM from [Google Drive]() or [Baidu Wangpan]()
-2. Put affnity matrix in "\*\*/data/cache" and meta data in "\*\*/data/meta".
+2. Put affnity matrix in "\*\*/data/affinity" and meta data in "\*\*/data/meta".
 Here "**" means the path that you clone this project to.
 3. Run "matching.py" for visual matching and "propagation.py" for lable propagation. Example:  
 `python propagation.py --exp in --gpu_id -1 --temporal_link`
