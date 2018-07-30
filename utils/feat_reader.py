@@ -42,7 +42,7 @@ def parse_label(meta_info, mid):
     return label_list, label_dict
 
 
-def read_cross_movie_meta(meta_file):
+def read_across_movie_meta(meta_file):
     """
     label_list:
         index: tracklet idx
@@ -83,7 +83,7 @@ def read_feat_of_one_movie(feat_dir, mid, region, data_type):
     return feat_mat
 
 
-def read_feat_cross_movies(feat_dir, region, data_type):
+def read_feat_across_movies(feat_dir, region, data_type):
     """
     region: face or body
     data_type: cast or tracklet
@@ -111,7 +111,7 @@ def read_affmat_of_one_movie(affinity_dir, mid, region, data_type, link_type='me
     return affmat
 
 
-def read_affmat_cross_movies(affinity_dir, region, data_type, link_type='mean'):
+def read_affmat_across_movies(affinity_dir, region, data_type, link_type='mean'):
     """
     region: face or body
     data_type: cast-tracklet or tracklet-tracklet

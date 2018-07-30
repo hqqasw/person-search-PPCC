@@ -13,8 +13,8 @@ import os.path as osp
 import numpy as np
 import argparse
 
-from utils import read_meta, parse_label, read_cross_movie_meta
-from utils import read_affmat_of_one_movie, read_affmat_cross_movies
+from utils import read_meta, parse_label, read_across_movie_meta
+from utils import read_affmat_of_one_movie, read_affmat_across_movies
 from utils import get_topk, get_mAP, affmat2retdict, affmat2retlist
 
 
@@ -79,17 +79,17 @@ def run_in_movie(data_dir, subset, data_type, face_ratio):
 
 def run_across_movie(data_dir, subset, data_type, face_ratio):
     affinity_dir = osp.join(data_dir, 'affinity', subset, 'across')
-    list_file = osp.join(data_dir, 'meta', 'cross_{}.json'.format(subset))
-    pids, gt_list, gt_dict = read_cross_movie_meta(list_file)
+    list_file = osp.join(data_dir, 'meta', 'across_{}.json'.format(subset))
+    pids, gt_list, gt_dict = read_across_movie_meta(list_file)
 
     # read affinity matrix
     if data_type == 'face':
-        affmat = read_affmat_cross_movies(affinity_dir, region='face', data_type='ct')
+        affmat = read_affmat_across_movies(affinity_dir, region='face', data_type='ct')
     elif data_type == 'body':
-        affmat = read_affmat_cross_movies(affinity_dir, region='body', data_type='ct')
+        affmat = read_affmat_across_movies(affinity_dir, region='body', data_type='ct')
     else:
-        face_affmat = read_affmat_cross_movies(affinity_dir, region='face', data_type='ct')
-        body_affmat = read_affmat_cross_movies(affinity_dir, region='body', data_type='ct')
+        face_affmat = read_affmat_across_movies(affinity_dir, region='face', data_type='ct')
+        body_affmat = read_affmat_across_movies(affinity_dir, region='body', data_type='ct')
         if data_type == 'ave_fusion':
             affmat = face_ratio*face_affmat + (1-face_ratio)*body_affmat
         else:
