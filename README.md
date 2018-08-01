@@ -9,7 +9,7 @@ More details about this dataset can be found in our [project page](http://qqhuan
 
 ## Basic Usage
 
-1. Download the affinity matrices and meta data of CSM from [Google Drive]() or [Baidu Wangpan]()
+1. Download the affinity matrices and meta data of CSM from [Google Drive](https://drive.google.com/drive/folders/1u51eRnZS1rQaM7GStPTQKB0BugpnGM9W?usp=sharing) or [Baidu Wangpan](https://pan.baidu.com/s/1JG30kPTWxJmf1saA0e6CLQ)
 2. Put affnity matrix in "\*\*/data/affinity" and meta data in "\*\*/data/meta".
 Here "**" means the path that you clone this project to.
 3. Run "matching.py" for visual matching and "propagation.py" for lable propagation. Example:  
