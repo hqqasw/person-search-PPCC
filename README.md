@@ -19,7 +19,7 @@ Here "**" means the path that you clone this project to.
 
 * The downloaded affinity matrices are calculate by the consin simmilarity of the visual features bewteen the instances.
 More specific, we use face features for cast-tracklet links and body features for tracklet-tracklet links.
-The face model is a Resnet-101 pretrained on MS-Celeb-1M and finetune on the training set of CSM.
+The face model is a Resnet-101 trained on MS-Celeb-1M.
 The body model is a Resnet-50 pretrianed on ImageNet and finetune on the training set of CSM.
 You can also train your own model on CSM.
 
