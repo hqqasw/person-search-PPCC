@@ -28,12 +28,13 @@ you can choose any one of them by setting the paprameter "gpu_id" (-1 for CPU an
 The GPU code is based on [PyTorch](https://pytorch.org/).
 You are recommand to use GPU version since it is much faster, especially for the "ACROSS" experiment settting.
 
-## Ciatation
+## Citation
 ```
-@inproceedings{PPCC2018ECCV,
-  author = {Qingqiu Huang and Wentao Liu and Dahua Lin},
-  title = {Person Search in Videos with One Portrait Through Visual and Temporal Links},
-  booktitle = {ECCV},
-  year = {2018},
+@inproceedings{huang2018person,
+    title={Person Search in Videos with One Portrait Through Visual and Temporal Links},
+    author={Huang, Qingqiu and Liu, Wentao and Lin, Dahua},
+    booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+    pages={425--441},
+    year={2018}
 }
 ```
